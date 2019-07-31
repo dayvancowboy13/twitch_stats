@@ -9,7 +9,7 @@ def get_top_streams(num_entries):
     url = 'https://api.twitch.tv/helix/streams?first=' + str(num_entries)
 
     # send my request
-    r = requests.get(url, headers={'Client-ID':'1eqrgf88jl70th3jnvrju7g95cqfiz'})
+    r = requests.get(url, headers={'Client-ID':'insert here'})
 
     info_dict = json.loads(r.text)
 

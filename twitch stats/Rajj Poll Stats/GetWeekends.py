@@ -1,6 +1,6 @@
 from datetime import date, timedelta
 
-day = date(2019,4,22)
+day = date(2019,4,22) # ORL only has logs starting from Aprill 22, 2019
 oneDay = timedelta(days=1)
 
 print("Starting date: ", day)

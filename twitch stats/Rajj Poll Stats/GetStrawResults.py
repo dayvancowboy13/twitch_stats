@@ -1,5 +1,6 @@
 import requests
 import AdvancedHTMLParser
+from sys import argv
 
 def getStats(url):
 
@@ -41,21 +42,23 @@ def getStats(url):
     f.close()
 
 def getUrl():
-    x = input('Enter URL or number: ')
+    if(len(argv) <= 1):
 
-    if x[0] == 'h':
-        url = x
-    elif x.isdigit():
-        url = 'https://www.strawpoll.me/' + x + '/r'
+        x = input('Enter URL or number: ')
+
+        if x[0] == 'h':
+            url = x
+        elif x.isdigit():
+            url = 'https://www.strawpoll.me/' + x + '/r'
+        else:
+            print('Something wrong')
+            exit()
+
     else:
-        print('Something wrong')
-        exit()
-
+        url = 'https://www.strawpoll.me/' + argv[1] + '/r'
 
     return url
-
+################################
+## "Main": #############
 url = getUrl()
 getStats(url)
-
-
-#print(ct)
